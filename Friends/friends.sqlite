@@ -1,0 +1,38 @@
+-- Table containing IDs, names, birthdays, and emails
+-- Demonstrates basic clauses and ability to create/modify information in a table
+
+-- creation of table
+CREATE TABLE friends (
+  id INTEGER,
+  name TEXT,
+  birthday DATE
+);
+
+-- adding our values
+INSERT INTO friends (id, name, birthday)
+VALUES (1, 'Kirby', '1992-04-27');
+
+INSERT INTO friends (id, name, birthday)
+VALUES (2, 'Luigi', '1964-10-11');
+
+INSERT INTO friends (id, name, birthday)
+VALUES (3, 'Toadette', '2002-04-22');
+
+-- adding an email column
+ALTER TABLE friends
+ADD COLUMN email TEXT;
+
+-- updating our data to include emails
+UPDATE friends
+SET email = 'yaaaaaa@hotmail.com'
+WHERE id = 1;
+
+UPDATE friends
+SET email = 'itsameluigi@aol.com'
+WHERE id = 2;
+
+UPDATE friends
+SET email = 'yahoo@yahoo.com'
+WHERE id = 3;
+
+SELECT * FROM friends;
